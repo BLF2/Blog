@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 
 /**
  * Created by blf2 on 16-1-30.
+ * 登录信息更新
  */
 public class DbUpdate {
     public Boolean updateLoginInfo(LoginInfo loginInfo){
