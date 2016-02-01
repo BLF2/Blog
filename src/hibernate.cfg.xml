@@ -40,6 +40,7 @@
 
         <!--数据库持久化映射文件-->
         <mapping resource="net/blf2/model/user/staticfile/LoginInfo.hbm.xml" />
-
+        <mapping resource="net/blf2/model/article/staticfile/ArticleInfo.hbm.xml" />
+        <mapping resource="net/blf2/model/tag/staticfile/TagInfo.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

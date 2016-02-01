@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <typedef class="net.blf2.model.article.staticfile.ArticleStatus" name="AStatus"/>
+
+    <class name="net.blf2.model.article.info.ArticleInfo" table="article_info">
+        <cache usage="read-write"/>
+        <id name="articleId" column="article_id">
+            <generator class="native"/>
+        </id>
+        <property name="articleTitle" type="java.lang.String" column="article_title"/>
+        <property name="writerId" type="java.lang.Integer" column="writer_id"/>
+        <property name="articleText" type="java.lang.String" column="article_text"/>
+        <property name="publishDateTime" type="java.lang.String" column="publish_date_time"/>
+        <property name="articleStatus" type="AStatus" column="article_status"/>
+    </class>
+</hibernate-mapping>
