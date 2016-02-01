@@ -66,7 +66,7 @@ public class ArticleInfoFactory {
     public void setArticleStatus(ArticleStatus articleStatus) {
         this.articleStatus = articleStatus;
     }
-    
+
     public IArticleInfo getArticleInfo(){
         return null;
     }
