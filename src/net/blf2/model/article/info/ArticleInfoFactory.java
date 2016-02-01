@@ -1,5 +1,6 @@
 package net.blf2.model.article.info;
 
+import net.blf2.model.article.DAO.DbInsert;
 import net.blf2.model.article.staticfile.ArticleStatus;
 import net.blf2.model.article.staticfile.IArticleInfo;
 
@@ -68,6 +69,7 @@ public class ArticleInfoFactory {
     }
 
     public IArticleInfo getArticleInfo(){
-        return null;
+        return new DbInsert().insertArticleInfo(new ArticleInfo(this.articleTitle,this.writerId,this.articleText
+        ,this.publishDateTime,this.articleStatus));
     }
 }
