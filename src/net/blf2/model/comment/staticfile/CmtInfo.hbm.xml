@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="net.blf2.model.comment.info.CmtInfo" table="cmt_info">
+        <cache usage="read-write"/>
+        <id name="cmtId" column="cmt_id">
+            <generator class="native"/>
+        </id>
+        <property name="cmtorName" type="java.lang.String" column="cmtor_name"/>
+        <property name="articleId" type="java.lang.Integer" column="article_id"/>
+        <property name="replyId" type="java.lang.Integer" column="reply_id"/>
+        <property name="replyDateTime" type="java.lang.String" column="reply_date_time"/>
+        <property name="cmtText" type="java.lang.String" column="cmt_text"/>
+        <property name="cmtorEmail" type="java.lang.String" column="cmtor_email"/>
+        <property name="cmtorMainPage" type="java.lang.String" column="cmtor_main_page"/>
+
+    </class>
+</hibernate-mapping>
