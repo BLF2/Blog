@@ -1,11 +1,13 @@
 package net.blf2.model.comment.info;
 
+import net.blf2.model.comment.staticfile.ICmtInfo;
+
 /**
  * Created by blf2 on 16-2-11.
  * 评论信息类
  */
-public class CmtInfo {
-    Integer cmdId;//本条评论的id
+public class CmtInfo implements ICmtInfo{
+    Integer cmtId;//本条评论的id
     String cmtorName;//评论者昵称
     Integer articleId;//被评论的文章
     Integer replyId;//回复给谁
@@ -28,14 +30,15 @@ public class CmtInfo {
         this.cmtorMainPage = cmtorMainPage;
     }
 
-    public Integer getCmdId() {
-        return cmdId;
+    public Integer getCmtId() {
+        return cmtId;
     }
 
-    public void setCmdId(Integer cmdId) {
-        this.cmdId = cmdId;
+    public void setCmtId(Integer cmtId) {
+        this.cmtId = cmtId;
     }
 
+    @Override
     public String getCmtorName() {
         return cmtorName;
     }
@@ -44,6 +47,7 @@ public class CmtInfo {
         this.cmtorName = cmtorName;
     }
 
+    @Override
     public Integer getArticleId() {
         return articleId;
     }
@@ -52,6 +56,7 @@ public class CmtInfo {
         this.articleId = articleId;
     }
 
+    @Override
     public Integer getReplyId() {
         return replyId;
     }
@@ -60,6 +65,7 @@ public class CmtInfo {
         this.replyId = replyId;
     }
 
+    @Override
     public String getReplyDateTime() {
         return replyDateTime;
     }
@@ -68,6 +74,7 @@ public class CmtInfo {
         this.replyDateTime = replyDateTime;
     }
 
+    @Override
     public String getCmtText() {
         return cmtText;
     }
@@ -76,6 +83,7 @@ public class CmtInfo {
         this.cmtText = cmtText;
     }
 
+    @Override
     public String getCmtorEmail() {
         return cmtorEmail;
     }
@@ -84,6 +92,7 @@ public class CmtInfo {
         this.cmtorEmail = cmtorEmail;
     }
 
+    @Override
     public String getCmtorMainPage() {
         return cmtorMainPage;
     }

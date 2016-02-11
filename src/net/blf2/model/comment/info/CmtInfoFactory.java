@@ -1,5 +1,7 @@
 package net.blf2.model.comment.info;
 
+import net.blf2.model.comment.staticfile.ICmtInfo;
+
 /**
  * Created by blf2 on 16-2-11.
  * 评论类的工厂类
@@ -81,6 +83,10 @@ public class CmtInfoFactory {
 
     public void setCmtorMainPage(String cmtorMainPage) {
         this.cmtorMainPage = cmtorMainPage;
+    }
+
+    public ICmtInfo getCmtInfo(){
+        return null;
     }
 
 }
