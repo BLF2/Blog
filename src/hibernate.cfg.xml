@@ -20,7 +20,7 @@
         <!-- SQL方言，这边设定的是MySQL -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="show_sql">false</property>
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hbm2ddl.auto">update</property>
         <property name="format_sql">true</property>
         <property name="hibernate.cache.use_second_level_cache">false</property>
         <!--C3P0配置 -->
@@ -43,5 +43,6 @@
         <mapping resource="net/blf2/model/article/staticfile/ArticleInfo.hbm.xml" />
         <mapping resource="net/blf2/model/tag/staticfile/TagInfo.hbm.xml" />
         <mapping resource="net/blf2/model/comment/staticfile/CmtInfo.hbm.xml" />
+        <mapping resource="net/blf2/model/articletag/staticfile/AticleTag.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

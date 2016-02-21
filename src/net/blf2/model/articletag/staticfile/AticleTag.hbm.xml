@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="net.blf2.model.articletag.info.ArticleTag" table="article_tag">
+        <cache usage="read-write"/>
+        <id name="acId" column="a_c_id">
+            <generator class="native"/>
+        </id>
+        <property name="articleId" type="java.lang.Integer" column="article_id"/>
+        <property name="tagId" type="java.lang.Integer" column="tag_id"/>
+    </class>
+</hibernate-mapping>
