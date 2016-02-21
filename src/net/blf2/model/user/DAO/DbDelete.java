@@ -17,16 +17,6 @@ public class DbDelete {
     public Boolean deleteLoginInfo(LoginInfo loginInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();
-        //先删除这个人的所有文章
-        Query query = session.createQuery("from ArticleInfo ai where ai.writerId=" + loginInfo.getLoginId());
-        Integer length = query.list().size();
-        if(length > 0){
-            List<ArticleInfo> list = query.list();
-            for(ArticleInfo ai : list){
-                session.delete(ai);
-            }
-        }
-        //删除这个人的信息
         session.delete(loginInfo);
         transaction.commit();
         HibernateSessionFactory.closeSession();
