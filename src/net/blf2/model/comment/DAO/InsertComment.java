@@ -1,21 +1,21 @@
-package net.blf2.model.articletag.DAO;
+package net.blf2.model.comment.DAO;
 
-import net.blf2.model.articletag.info.ArticleTag;
+import net.blf2.model.comment.info.CmtInfo;
 import net.blf2.staticclass.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- * Created by blf2 on 16-2-21.
- * 给文章添加标签
+ * Created by blf2 on 16-2-11.
+ * 评论数据库插入
  */
-public class DbInsert {
-    public ArticleTag insertArticleTag(ArticleTag articleTag){
+public class InsertComment {
+    public CmtInfo insertCmtInfo(CmtInfo cmtInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();
-        session.save(articleTag);
+        session.save(cmtInfo);
         transaction.commit();
         HibernateSessionFactory.closeSession();
-        return articleTag;
+        return cmtInfo;
     }
 }

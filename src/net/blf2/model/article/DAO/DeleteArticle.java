@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
  * Created by blf2 on 16-2-1.
  * 文章信息类删除
  */
-public class DbDelete {
+public class DeleteArticle {
     public Boolean deleteArticleInfo(ArticleInfo articleInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();

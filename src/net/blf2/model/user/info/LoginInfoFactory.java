@@ -1,6 +1,6 @@
 package net.blf2.model.user.info;
 
-import net.blf2.model.user.DAO.DbInsert;
+import net.blf2.model.user.DAO.InsertUser;
 import net.blf2.model.user.staticfile.ILoginInfo;
 import net.blf2.model.user.staticfile.LoginRule;
 
@@ -76,7 +76,7 @@ public class LoginInfoFactory {
     public ILoginInfo getLoginInfo(){
         if(this.loginEmail == null || this.loginRule == null)
             return null;
-        return new DbInsert().insertLoginInfo(new LoginInfo(this.loginEmail,this.loginPswd,
+        return new InsertUser().insertLoginInfo(new LoginInfo(this.loginEmail,this.loginPswd,
         this.loginName,this.loginRule));
     }
 }

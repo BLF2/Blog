@@ -7,7 +7,7 @@ package net.blf2.model.article.staticfile;
 public interface IArticleInfo {
     Integer getArticleId();
     String getArticleTitle();
-    String getWriterId();
+    Integer getWriterId();
     String getArticleText();
     String getPublishDateTime();
     ArticleStatus getArticleStatus();

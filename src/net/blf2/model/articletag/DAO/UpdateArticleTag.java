@@ -1,19 +1,18 @@
-package net.blf2.model.comment.DAO;
+package net.blf2.model.articletag.DAO;
 
-import net.blf2.model.comment.info.CmtInfo;
+import net.blf2.model.articletag.info.ArticleTag;
 import net.blf2.staticclass.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- * Created by blf2 on 16-2-11.
- * 更新
+ * Created by blf2 on 16-2-21.
  */
-public class DbUpdate {
-    public Boolean updateCmtInfo(CmtInfo cmtInfo){
+public class UpdateArticleTag {
+    public Boolean updateArticleTag(ArticleTag articleTag){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();
-        session.update(cmtInfo);
+        session.update(articleTag);
         transaction.commit();
         HibernateSessionFactory.closeSession();
         return true;

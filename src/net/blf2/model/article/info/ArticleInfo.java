@@ -10,7 +10,7 @@ import net.blf2.model.article.staticfile.IArticleInfo;
 public class ArticleInfo implements IArticleInfo{
     private Integer articleId;//文章id
     private String articleTitle;//文章标题
-    private String writerId;//作者id
+    private Integer writerId;//作者id
     private String articleText;//文章主体
     private String publishDateTime;//发表时间
     private ArticleStatus articleStatus;//文章状态  已发表 草稿箱 垃圾箱
@@ -18,7 +18,7 @@ public class ArticleInfo implements IArticleInfo{
     public ArticleInfo() {
     }
 
-    public ArticleInfo(String articleTitle, String writerId, String articleText, String publishDateTime, ArticleStatus articleStatus) {
+    public ArticleInfo(String articleTitle, Integer writerId, String articleText, String publishDateTime, ArticleStatus articleStatus) {
         this.articleTitle = articleTitle;
         this.writerId = writerId;
         this.articleText = articleText;
@@ -26,6 +26,7 @@ public class ArticleInfo implements IArticleInfo{
         this.articleStatus = articleStatus;
     }
 
+    @Override
     public Integer getArticleId() {
         return articleId;
     }
@@ -34,6 +35,7 @@ public class ArticleInfo implements IArticleInfo{
         this.articleId = articleId;
     }
 
+    @Override
     public String getArticleTitle() {
         return articleTitle;
     }
@@ -42,14 +44,16 @@ public class ArticleInfo implements IArticleInfo{
         this.articleTitle = articleTitle;
     }
 
-    public String getWriterId() {
+    @Override
+    public Integer getWriterId() {
         return writerId;
     }
 
-    public void setWriterId(String writerId) {
+    public void setWriterId(Integer writerId) {
         this.writerId = writerId;
     }
 
+    @Override
     public String getArticleText() {
         return articleText;
     }
@@ -58,6 +62,7 @@ public class ArticleInfo implements IArticleInfo{
         this.articleText = articleText;
     }
 
+    @Override
     public String getPublishDateTime() {
         return publishDateTime;
     }
@@ -66,6 +71,7 @@ public class ArticleInfo implements IArticleInfo{
         this.publishDateTime = publishDateTime;
     }
 
+    @Override
     public ArticleStatus getArticleStatus() {
         return articleStatus;
     }

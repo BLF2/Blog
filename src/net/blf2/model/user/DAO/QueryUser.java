@@ -12,7 +12,7 @@ import java.util.List;
  * Created by blf2 on 16-1-30.
  * 登录信息查询
  */
-public class DbQuery {
+public class QueryUser {
     public LoginInfo queryLoginInfoById(Integer id){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();

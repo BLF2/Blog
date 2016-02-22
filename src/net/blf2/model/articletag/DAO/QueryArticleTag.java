@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
  * Created by blf2 on 16-2-21.
  * 查询文章标签
  */
-public class DbQuery {
+public class QueryArticleTag {
     public ArticleTag queryArticleTagById(Integer acId){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();

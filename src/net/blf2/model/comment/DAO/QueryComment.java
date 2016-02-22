@@ -12,7 +12,7 @@ import java.util.List;
  * Created by blf2 on 16-2-11.
  * 评论查询
  */
-public class DbQuery {
+public class QueryComment {
     public CmtInfo queryCmtInfoById(Integer id){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();

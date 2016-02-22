@@ -1,5 +1,6 @@
 package net.blf2.model.comment.info;
 
+import net.blf2.model.comment.DAO.InsertComment;
 import net.blf2.model.comment.staticfile.ICmtInfo;
 
 /**
@@ -86,7 +87,8 @@ public class CmtInfoFactory {
     }
 
     public ICmtInfo getCmtInfo(){
-        return null;
+        return new InsertComment().insertCmtInfo(new CmtInfo(this.cmtorName,this.articleId,this.replyId,
+                this.replyDateTime,this.cmtText,this.cmtorEmail,this.cmtorMainPage));
     }
 
 }

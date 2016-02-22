@@ -12,7 +12,7 @@ import java.util.List;
  * Created by blf2 on 16-2-1.
  * 标签类的查询
  */
-public class DbQuery {
+public class QueryTag {
     public TagInfo queryTagInfoById(Integer id){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();

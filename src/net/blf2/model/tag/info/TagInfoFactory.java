@@ -1,6 +1,6 @@
 package net.blf2.model.tag.info;
 
-import net.blf2.model.tag.DAO.DbInsert;
+import net.blf2.model.tag.DAO.InsertTag;
 import net.blf2.model.tag.staticfile.ITagInfo;
 
 /**
@@ -28,6 +28,6 @@ public class TagInfoFactory {
     }
 
     public ITagInfo getTagInfo(){
-        return new DbInsert().insertTagInfo(new TagInfo(this.tagName));
+        return new InsertTag().insertTagInfo(new TagInfo(this.tagName));
     }
 }

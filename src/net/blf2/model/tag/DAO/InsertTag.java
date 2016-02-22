@@ -1,21 +1,21 @@
-package net.blf2.model.user.DAO;
+package net.blf2.model.tag.DAO;
 
-import net.blf2.model.user.info.LoginInfo;
+import net.blf2.model.tag.info.TagInfo;
 import net.blf2.staticclass.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- * Created by blf2 on 16-1-30.
- * 登录信息更新
+ * Created by blf2 on 16-2-1.
+ * 标签信息类的增加
  */
-public class DbUpdate {
-    public Boolean updateLoginInfo(LoginInfo loginInfo){
+public class InsertTag {
+    public TagInfo insertTagInfo(TagInfo tagInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();
-        session.update(loginInfo);
+        session.save(tagInfo);
         transaction.commit();
         HibernateSessionFactory.closeSession();
-        return true;
+        return tagInfo;
     }
 }

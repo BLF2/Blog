@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
  * 文章信息类的插入
  *
  */
-public class DbInsert {
+public class InsertArticle {
     public ArticleInfo insertArticleInfo(ArticleInfo articleInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();

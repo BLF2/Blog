@@ -1,21 +1,21 @@
-package net.blf2.model.comment.DAO;
+package net.blf2.model.article.DAO;
 
-import net.blf2.model.comment.info.CmtInfo;
+import net.blf2.model.article.info.ArticleInfo;
 import net.blf2.staticclass.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- * Created by blf2 on 16-2-11.
- * 评论数据库插入
+ * Created by blf2 on 16-2-1.
+ * 文章信息类的更新
  */
-public class DbInsert {
-    public CmtInfo insertCmtInfo(CmtInfo cmtInfo){
+public class UpdateArticle {
+    public Boolean updateArticleInfo(ArticleInfo articleInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();
-        session.save(cmtInfo);
+        session.update(articleInfo);
         transaction.commit();
         HibernateSessionFactory.closeSession();
-        return cmtInfo;
+        return true;
     }
 }

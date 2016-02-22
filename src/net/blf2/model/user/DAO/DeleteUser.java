@@ -1,18 +1,23 @@
-package net.blf2.model.articletag.DAO;
+package net.blf2.model.user.DAO;
 
-import net.blf2.model.articletag.info.ArticleTag;
+import net.blf2.model.article.info.ArticleInfo;
+import net.blf2.model.user.info.LoginInfo;
 import net.blf2.staticclass.HibernateSessionFactory;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 /**
- * Created by blf2 on 16-2-21.
+ * Created by blf2 on 16-1-30.
+ * 登录信息删除
  */
-public class DbDelete {
-    public Boolean deleteArticleTag(ArticleTag articleTag){
+public class DeleteUser {
+    public Boolean deleteLoginInfo(LoginInfo loginInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(articleTag);
+        session.delete(loginInfo);
         transaction.commit();
         HibernateSessionFactory.closeSession();
         return true;

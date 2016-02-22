@@ -1,21 +1,21 @@
-package net.blf2.model.article.DAO;
+package net.blf2.model.tag.DAO;
 
-import net.blf2.model.article.info.ArticleInfo;
+import net.blf2.model.tag.info.TagInfo;
 import net.blf2.staticclass.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
  * Created by blf2 on 16-2-1.
- * 文章信息类的更新
+ *标签类的删除
  */
-public class DbUpdate {
-    public Boolean updateArticleInfo(ArticleInfo articleInfo){
+public class DeleteTag {
+    public Boolean deleteTagInfo(TagInfo tagInfo){
         Session session = HibernateSessionFactory.currentSession();
         Transaction transaction = session.beginTransaction();
-        session.update(articleInfo);
+        session.delete(tagInfo);
         transaction.commit();
         HibernateSessionFactory.closeSession();
-        return true;
+        return  true;
     }
 }
