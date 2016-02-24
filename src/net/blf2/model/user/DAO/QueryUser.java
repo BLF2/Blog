@@ -20,6 +20,8 @@ public class QueryUser {
         if(query.list().size() == 0)
             return null;
         LoginInfo loginInfo = (LoginInfo)query.list().get(0);
+        transaction.commit();
+        HibernateSessionFactory.closeSession();
         return loginInfo;
     }
     public LoginInfo queryLoginInfoByEmail(String email){
@@ -29,6 +31,8 @@ public class QueryUser {
         if(query.list().size() == 0)
             return null;
         LoginInfo loginInfo = (LoginInfo)query.list().get(0);
+        transaction.commit();
+        HibernateSessionFactory.closeSession();
         return loginInfo;
     }
     public List<LoginInfo> queryLoginInfoAll(){
@@ -38,6 +42,8 @@ public class QueryUser {
         if(query.list().size() == 0)
             return null;
         List<LoginInfo>list = query.list();
+        transaction.commit();
+        HibernateSessionFactory.closeSession();
         return list;
     }
 }

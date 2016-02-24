@@ -20,6 +20,8 @@ public class QueryArticle {
         if(query.list().size() == 0)
             return null;
         ArticleInfo articleInfo = (ArticleInfo) query.list().get(0);
+        transaction.commit();
+        HibernateSessionFactory.closeSession();
         return articleInfo;
     }
     public List<ArticleInfo> queryArticleInfoByWriterId(Integer writerId){
@@ -29,6 +31,8 @@ public class QueryArticle {
         if(query.list().size() == 0)
             return null;
         List<ArticleInfo>list = query.list();
+        transaction.commit();
+        HibernateSessionFactory.closeSession();
         return list;
     }
     public List<ArticleInfo> queryArticleInfoAll(){
@@ -38,6 +42,8 @@ public class QueryArticle {
         if(query.list().size() == 0)
             return null;
         List<ArticleInfo>list = query.list();
+        transaction.commit();
+        HibernateSessionFactory.closeSession();
         return list;
     }
 }
