@@ -16,6 +16,6 @@ public class UpdateUser {
         session.update(loginInfo);
         transaction.commit();
         HibernateSessionFactory.closeSession();
-        return true;
+        return Boolean.TRUE;
     }
 }
