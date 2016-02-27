@@ -12,4 +12,5 @@ public interface ILoginInfo {
     LoginRule getLoginRule();
     Boolean isUser();
     Boolean isAdmin();
+    Boolean isInactive();
 }

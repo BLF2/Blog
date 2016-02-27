@@ -69,4 +69,7 @@ public class LoginInfo implements ILoginInfo{
     public Boolean isAdmin(){
         return this.loginRule.isAdmian();
     }
+    public Boolean isInactive(){
+        return this.loginRule.isInactive();
+    }
 }

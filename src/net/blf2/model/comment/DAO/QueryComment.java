@@ -1,7 +1,7 @@
 package net.blf2.model.comment.DAO;
 
 import net.blf2.model.comment.info.CmtInfo;
-import net.blf2.staticclass.HibernateSessionFactory;
+import net.blf2.util.HibernateSessionFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

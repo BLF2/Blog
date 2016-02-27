@@ -1,13 +1,9 @@
 package net.blf2.model.user.DAO;
 
-import net.blf2.model.article.info.ArticleInfo;
 import net.blf2.model.user.info.LoginInfo;
-import net.blf2.staticclass.HibernateSessionFactory;
-import org.hibernate.Query;
+import net.blf2.util.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import java.util.List;
 
 /**
  * Created by blf2 on 16-1-30.

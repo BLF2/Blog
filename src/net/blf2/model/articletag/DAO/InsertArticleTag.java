@@ -1,7 +1,7 @@
 package net.blf2.model.articletag.DAO;
 
 import net.blf2.model.articletag.info.ArticleTag;
-import net.blf2.staticclass.HibernateSessionFactory;
+import net.blf2.util.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

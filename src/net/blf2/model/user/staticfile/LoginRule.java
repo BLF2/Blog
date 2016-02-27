@@ -5,7 +5,7 @@ package net.blf2.model.user.staticfile;
  * 登陆信息类中身份的枚举类
  */
 public enum LoginRule {
-    user,admin;//普通用户  管理员
+    user,admin,inactive;//普通用户  管理员
     public Boolean isUser(){
         if(this == user)
             return true;
@@ -15,5 +15,10 @@ public enum LoginRule {
         if(this == admin)
             return true;
         return false;
+    }
+    public Boolean isInactive(){
+        if(this == inactive)
+            return Boolean.TRUE;
+        return Boolean.FALSE;
     }
 }
