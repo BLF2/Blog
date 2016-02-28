@@ -35,18 +35,18 @@ public class PrimaryUser {
      * @return
      */
     public Boolean loginCheck(String loginEmail,String loginPswd){
-        LoginInfo loginInfo = new QueryUser().queryLoginInfoByEmail(loginEmail);
-        if(loginEmail.equals(loginInfo.getLoginEmail()) && loginPswd.equals(loginInfo.getLoginPswd())){
+        ILoginInfo iLoginInfo = this.queryLoginInfoByLoginEmail(loginEmail);
+        if(loginEmail.equals(iLoginInfo.getLoginEmail()) && loginPswd.equals(iLoginInfo.getLoginPswd())){
             return Boolean.TRUE;
         }
         return Boolean.FALSE;
-    }
+    }//登陆验证
     public ILoginInfo registerLoginInfo(String loginEmail,String loginPswd,String loginName,LoginRule loginRule){
         LoginInfoFactory loginInfoFactory = new LoginInfoFactory(loginEmail,loginPswd,loginName,loginRule);
         return loginInfoFactory.getLoginInfo();
-    }
+    }//注册用户
 
-    public ILoginInfo queryLoginInfo(String loginEmail){
+    public ILoginInfo queryLoginInfoByLoginEmail(String loginEmail){
         //判断合法E-Mail
         Pattern pattern = Pattern.compile("^\\s*\\w+(?:\\.{0,1}[\\w-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\\.[a-zA-Z]+\\s*$");
         Matcher matcher = pattern.matcher(loginEmail);
@@ -55,13 +55,13 @@ public class PrimaryUser {
             return new QueryUser().queryLoginInfoByEmail(loginEmail);
         }
         return null;
-    }
+    }//通过用户邮箱查询用户信息
     public Boolean updateLoginInfo(Integer loginId,String loginPswd,String loginName){
         LoginInfo loginInfo = new QueryUser().queryLoginInfoById(loginId);
         loginInfo.setLoginPswd(loginPswd);
         loginInfo.setLoginName(loginName);
         return new UpdateUser().updateLoginInfo(loginInfo);
-    }
+    }//更新用户信息
 
     /**
      * 用户的文章操作部分
@@ -78,16 +78,20 @@ public class PrimaryUser {
                 publishDateTime,articleStatus);
         IArticleInfo iArticleInfo = articleInfoFactory.getArticleInfo();
         return iArticleInfo.getArticleId();
-    }
+    }//保存文章
+
     public List<ArticleInfo> findArticleInfoAllByWriterId(Integer writerId){
         return new QueryArticle().queryArticleInfoByWriterId(writerId);
-    }
+    }//查看自己文章
+
     public ArticleInfo findArticleInfoByArticleId(Integer articleId){
         return new QueryArticle().queryArticleInfoById(articleId);
-    }
+    }//通过文章id查询文章
+
     public Boolean updateArticleInfo(ArticleInfo articleInfo){
         return new UpdateArticle().updateArticleInfo(articleInfo);
-    }
+    }//更新自己文章
+
     public Boolean deleteArticleInfoByArticleId(Integer articleId){
         ArticleInfo articleInfo = new QueryArticle().queryArticleInfoById(articleId);
         if(articleId != null) {
@@ -100,7 +104,7 @@ public class PrimaryUser {
             return new DeleteArticle().deleteArticleInfo(articleInfo);
         }
         return Boolean.FALSE;
-    }
+    }//删除文章
 
     /**
      * 用户给文章标签操作
@@ -110,13 +114,13 @@ public class PrimaryUser {
         if(articleTag != null)
             return Boolean.TRUE;
         return Boolean.FALSE;
-    }
+    }//给文章添加标签
     public Boolean deleteTagFromArticle(Integer tagId,Integer articleId){
         ArticleTag articleTag = new QueryArticleTag().queryArticleTagByDoubleId(articleId,tagId);
         if(articleTag != null){
             return new DeleteArticleTag().deleteArticleTag(articleTag);
         }
         return Boolean.FALSE;
-    }
+    }//删除文章已经有的标签
 
 }
